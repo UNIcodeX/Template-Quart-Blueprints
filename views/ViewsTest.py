@@ -1,4 +1,4 @@
-from quart import Blueprint
+# from quart import Blueprint  # Not really necessary here since it's imported in common.
 
 from common import *
 
@@ -9,15 +9,15 @@ bp = Blueprint("test", __name__, url_prefix="/test")
 def index():
   return navigation()
 
-@bp.route("/test_sync/")
+@bp.route("/_sync/")
 @login_required
-def test_sync():
+def _sync():
   nav = navigation()
   return nav
 
-@bp.route("/test_async/")
+@bp.route("/_async/")
 @login_required
-async def test_async():
+async def _async():
   nav = navigation()
   return await render_template_string("""
   <html>

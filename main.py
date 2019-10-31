@@ -1,6 +1,6 @@
 from common import *
-from ViewsRoot import bp as vr
-from ViewsTest import bp as vt
+from views.ViewsRoot import bp as vr
+from views.ViewsTest import bp as vt
 
 app = Quart(__name__)
 

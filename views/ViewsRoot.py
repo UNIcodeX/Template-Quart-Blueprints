@@ -1,4 +1,4 @@
-from quart import Blueprint
+# from quart import Blueprint  # Not really necessary here since it's imported in common.
 
 from common import *
 
@@ -23,3 +23,6 @@ async def index():
   </html>
   """, locals=locals())
 
+@bp.route("/template")
+async def template():
+  return await render_template("template.html")
